@@ -123,27 +123,23 @@ func resourceAwsLb() *schema.Resource {
 			},
 
 			"access_logs": {
-				Type:             schema.TypeList,
-				Optional:         true,
-				Computed:         true,
-				MaxItems:         1,
-				DiffSuppressFunc: suppressIfLBType("network"),
+				Type:     schema.TypeList,
+				Optional: true,
+				Computed: true,
+				MaxItems: 1,
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"bucket": {
-							Type:             schema.TypeString,
-							Required:         true,
-							DiffSuppressFunc: suppressIfLBType("network"),
+							Type:     schema.TypeString,
+							Required: true,
 						},
 						"prefix": {
-							Type:             schema.TypeString,
-							Optional:         true,
-							DiffSuppressFunc: suppressIfLBType("network"),
+							Type:     schema.TypeString,
+							Optional: true,
 						},
 						"enabled": {
-							Type:             schema.TypeBool,
-							Optional:         true,
-							DiffSuppressFunc: suppressIfLBType("network"),
+							Type:     schema.TypeBool,
+							Optional: true,
 						},
 					},
 				},
