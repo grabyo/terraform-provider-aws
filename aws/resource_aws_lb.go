@@ -341,31 +341,6 @@ func resourceAwsLbUpdate(d *schema.ResourceData, meta interface{}) error {
 
 	switch d.Get("load_balancer_type").(string) {
 	case "application":
-		if d.HasChange("access_logs") || d.IsNewResource() {
-			logs := d.Get("access_logs").([]interface{})
-			if len(logs) == 1 {
-				log := logs[0].(map[string]interface{})
-
-				attributes = append(attributes,
-					&elbv2.LoadBalancerAttribute{
-						Key:   aws.String("access_logs.s3.enabled"),
-						Value: aws.String(strconv.FormatBool(log["enabled"].(bool))),
-					},
-					&elbv2.LoadBalancerAttribute{
-						Key:   aws.String("access_logs.s3.bucket"),
-						Value: aws.String(log["bucket"].(string)),
-					},
-					&elbv2.LoadBalancerAttribute{
-						Key:   aws.String("access_logs.s3.prefix"),
-						Value: aws.String(log["prefix"].(string)),
-					})
-			} else if len(logs) == 0 {
-				attributes = append(attributes, &elbv2.LoadBalancerAttribute{
-					Key:   aws.String("access_logs.s3.enabled"),
-					Value: aws.String("false"),
-				})
-			}
-		}
 		if d.HasChange("idle_timeout") || d.IsNewResource() {
 			attributes = append(attributes, &elbv2.LoadBalancerAttribute{
 				Key:   aws.String("idle_timeout.timeout_seconds"),
@@ -384,6 +359,41 @@ func resourceAwsLbUpdate(d *schema.ResourceData, meta interface{}) error {
 				Key:   aws.String("load_balancing.cross_zone.enabled"),
 				Value: aws.String(fmt.Sprintf("%t", d.Get("enable_cross_zone_load_balancing").(bool))),
 			})
+		}
+	}
+
+	if d.HasChange("access_logs") || d.IsNewResource() {
+		logs := d.Get("access_logs").([]interface{})
+		if len(logs) == 1 {
+			log := logs[0].(map[string]interface{})
+
+			attributes = append(attributes,
+				&elbv2.LoadBalancerAttribute{
+					Key:   aws.String("access_logs.s3.enabled"),
+					Value: aws.String(strconv.FormatBool(log["enabled"].(bool))),
+				},
+				&elbv2.LoadBalancerAttribute{
+					Key:   aws.String("access_logs.s3.bucket"),
+					Value: aws.String(log["bucket"].(string)),
+				},
+				&elbv2.LoadBalancerAttribute{
+					Key:   aws.String("access_logs.s3.prefix"),
+					Value: aws.String(log["prefix"].(string)),
+				})
+		} else if len(logs) == 0 {
+			attributes = append(attributes,
+				&elbv2.LoadBalancerAttribute{
+					Key:   aws.String("access_logs.s3.enabled"),
+					Value: aws.String("false"),
+				},
+				&elbv2.LoadBalancerAttribute{
+					Key:   aws.String("access_logs.s3.bucket"),
+					Value: aws.String(""),
+				},
+				&elbv2.LoadBalancerAttribute{
+					Key:   aws.String("access_logs.s3.prefix"),
+					Value: aws.String(""),
+				})
 		}
 	}
 
