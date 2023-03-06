@@ -9,14 +9,14 @@ require (
 )
 
 require (
-	github.com/Masterminds/goutils v1.1.0 // indirect
+	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20210428141323-04723f9f07d7 // indirect
 	github.com/agext/levenshtein v1.2.2 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310 // indirect
-	github.com/aws/aws-sdk-go v1.44.76 // indirect
+	github.com/aws/aws-sdk-go v1.44.81 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.16.11 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.15.4 // indirect
 	github.com/aws/aws-sdk-go-v2/credentials v1.12.0 // indirect
@@ -28,7 +28,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/fis v1.12.12 // indirect
 	github.com/aws/aws-sdk-go-v2/service/iam v1.18.4 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.9.4 // indirect
-	github.com/aws/aws-sdk-go-v2/service/kendra v1.31.4 // indirect
+	github.com/aws/aws-sdk-go-v2/service/kendra v1.33.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/rolesanywhere v1.0.4 // indirect
 	github.com/aws/aws-sdk-go-v2/service/route53domains v1.12.12 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.11.4 // indirect
@@ -90,8 +90,9 @@ require (
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	github.com/zclconf/go-cty v1.10.0 // indirect
 	golang.org/x/crypto v0.0.0-20220517005047-85d78b3ac167 // indirect
-	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
-	golang.org/x/sys v0.0.0-20220503163025-988cb79eb6c6 // indirect
+	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // indirect
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
+	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.6 // indirect
 	google.golang.org/genproto v0.0.0-20200711021454-869866162049 // indirect
