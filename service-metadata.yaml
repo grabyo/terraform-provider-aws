@@ -1,0 +1,71 @@
+# Purpose
+# This file helps us figure out if our service is doing its job well enough.
+# We're checking if everything, like the README, is actually helpful to people using it.
+# What's "good enough"? That's up to YOU!
+# We're using this info to find where we can make things better and plan out the fixes with the team.
+version: 1.0
+best_practices:
+  # Does the repository contain a meaningful README file?
+  # Possible values: yes, no
+  readme: to_be_set
+
+  # Does the service contain logs stored in cloud watch logs?
+  # Possible values: yes, no, not_applicable
+  cloudwatch_logs: to_be_set
+
+  # Does the service use infrastructure as code (i.e. Terraform or CloudFormation)?
+  # Possible values: yes, no, not_applicable
+  infrastructure_as_code: to_be_set
+
+  # Does the service have continuous integration?
+  # Possible values: yes, no, not_applicable
+  ci: to_be_set
+
+  # Does the service have continuous deployment?
+  # Possible values: yes, no, not_applicable
+  cd: to_be_set
+
+  # Does the service have sufficient alerting?
+  # Possible values: yes, no, not_applicable
+  alerting: to_be_set
+
+  # Does the service have swagger API definitions?
+  # Possible values: yes, no, not_applicable
+  swagger: to_be_set
+
+  # Does the service have sufficient telemetry (including metrics)?
+  # Possible values: yes, no, not_applicable
+  telemetry: to_be_set
+
+  # Does the service have dashboards?
+  # Possible values: yes, no, not_applicable
+  dashboards: to_be_set
+
+  # Does the service have sufficient unit testing?
+  # Possible values: yes, no, not_applicable
+  unit_testing: to_be_set
+
+  # Does the service have sufficient integration testing?
+  # Possible values: yes, no, not_applicable
+  integration_testing: to_be_set
+
+  # Does the service have sufficient load testing?
+  # Possible values: yes, no, not_applicable
+  load_testing: to_be_set
+
+  # Is the service integrated with the organization audit log service?
+  # This service aims to log all grabyo users actions in the platform (i.e. delete a stream).
+  # Possible values: yes, no, not_applicable
+  organisation_audit_logs_integration: to_be_set
+
+  # Does the service have architectural documentation?
+  # Possible values: yes, no, not_applicable
+  architectural_documentation: to_be_set
+
+  # Does the service have additional documentation?
+  # Possible values: yes, no, not_applicable
+  extra_documentation: to_be_set
+
+  # Does the service have disaster recovery runbooks?
+  # Possible values: yes, no, not_applicable
+  runbooks: to_be_set
